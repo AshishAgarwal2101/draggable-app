@@ -1,25 +1,41 @@
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DragBox from './DragBox';
+import BoxList from './BoxList';
 
-function App() {
+const App = () => {
+  const [itemListDetails, setItemListDetails] = useState([]);
+  let items = ["item-1", "item-2", "item-3", "item-4"];
+
+  useEffect(() => {
+    let itemListDetailsObj = [];
+    items.forEach((item , index) => {
+        itemListDetailsObj.push({
+            item,
+            isDraggableItemVisible: false
+        });
+    });
+    setItemListDetails(itemListDetailsObj);
+  }, []);
+
+  const onClickBoxListItem = (item) => {
+    let itemListDetailsObj = Object.assign([], itemListDetails); 
+    itemListDetailsObj.forEach((itemDetail) => {
+      if(itemDetail.item === item){
+        itemDetail.isDraggableItemVisible = true;
+      }
+    });
+
+    setItemListDetails(itemListDetailsObj);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <BoxList itemListDetails={itemListDetails} onClickBox={onClickBoxListItem}/>
+      <DragBox itemListDetails={itemListDetails}/>
     </div>
   );
-}
+};
 
 export default App;
