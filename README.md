@@ -8,4 +8,4 @@ A window with item list will be available on the left window.
 Clicking on an item will populate that item in the right window.
 All items in the right window can be dragged and dropped withing the window.
 
-![alt text](https://github.com/AshishAgarwal2101/draggable-app/tree/master/public/sample.JPG?raw=true)
+![alt text](https://github.com/AshishAgarwal2101/draggable-app/blob/master/public/sample.JPG?raw=true)
