@@ -14,7 +14,7 @@ Two options available on the right window:
     * To enable this, uncomment usage of "DragBox" component in App.js and comment/remove usage of ReactFlowDragDrop component.
 * All items in the right window can be dragged and dropped along with the option to connect the items using edges.
     * Used 'react-flow-renderer' package.
-    * Connection of items happens from top to bottom
+    * Connection of items happens from top to bottom.
 
 ![alt text](https://github.com/AshishAgarwal2101/draggable-app/blob/master/public/sample.JPG?raw=true)
 
